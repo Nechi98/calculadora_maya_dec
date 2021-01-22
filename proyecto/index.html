@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>MayaDec</title>
+        <script>
+            var x=0, y=0, z=0;
+            var n1=0, n2=0;
+
+            function convertir(){
+                x=document.getElementById("numero").value;
+                
+                /*var n1=x/400;
+                var y=x%0;
+
+                var n2=y/20;
+                var z=y%0;*/
+                alert(Number.parseInt(799/400));
+            }
+        </script>
+    </head>
+    <body>
+        <p>Convertidor de numeros decimales a numeros mayas</p>
+        Numero decimal: <input type="text" id="numero" value="1"> <button onclick="convertir()">Try it</button>
+
+        <table id="numero_maya" class="">
+			<tbody>
+				<tr>
+					<td id="n1p4"><p id="n4">cero</p></td>
+                </tr>
+                <tr>
+					<td id="n1p3"><p id="n3">cero</p></td>
+                </tr>
+                <tr>
+					<td id="n1p2"><p id="n2">cero</p></td>
+                </tr>
+                <tr>
+					<td id="n1p1"><p id="n1">cero</p></td>
+                </tr>
+			</tbody>
+		</table>
+    </body>
+</html>
