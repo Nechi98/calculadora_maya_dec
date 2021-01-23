@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+    <head>
+        <title>MayaDec</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            var x=0;
+            var raya = "_____";
+
+            function limpiar(){
+                for(var j=1; j<4; j++){
+                    for(var i=1; i<5; i++){
+                        document.getElementById("n"+j+"p"+i).innerHTML = "-";
+                    }
+                }
+            }
+
+            function convertir(){
+                limpiar();
+                var b1=Number.parseInt(document.getElementById("n1b").value);
+                var r1=Number.parseInt(document.getElementById("n1r").value);
+                var b2=Number.parseInt(document.getElementById("n2b").value);
+                var r2=Number.parseInt(document.getElementById("n2r").value);
+                var b3=Number.parseInt(document.getElementById("n3b").value);
+                var r3=Number.parseInt(document.getElementById("n3r").value);
+                x=(b1)+(r1*5)+(b2*20)+(r2*100)+(b3*400)+(r3*2000);
+                document.getElementById("numero").innerHTML = x;
+
+                var puntos = " ";
+                for(var i=0; i<b1; i++){
+                    puntos = puntos + "o ";
+                }
+                var a=1;
+                while(a<=r1){
+                    document.getElementById("n1p"+a).innerHTML = raya;
+                    a++;
+                }
+                document.getElementById("n1p"+a).innerHTML = puntos;
+
+                var puntos = " ";
+                for(var i=0; i<b2; i++){
+                    puntos = puntos + "o ";
+                }
+                var a=1;
+                while(a<=r2){
+                    document.getElementById("n2p"+a).innerHTML = raya;
+                    a++;
+                }
+                document.getElementById("n2p"+a).innerHTML = puntos;
+
+                var puntos = " ";
+                for(var i=0; i<b3; i++){
+                    puntos = puntos + "o ";
+                }
+                var a=1;
+                while(a<=r3){
+                    document.getElementById("n3p"+a).innerHTML = raya;
+                    a++;
+                }
+                document.getElementById("n3p"+a).innerHTML = puntos;
+            }
+        </script>
+    </head>
+    <body>
+        <p>Convertidor de numeros mayas a numeros decimales</p>
+
+        <table id="numero_maya" class="">
+			<tbody>
+                <tr>
+                    <td>
+                        <p>Nivel 3</p>
+                        <p>Bolitas</p>
+                        <select name="select" id="n3b">
+                            <option value=0 selected>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                        </select> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Rayas</p>
+                        <select name="select" id="n3r">
+                            <option value=0 selected>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Nivel 2</p>
+                        <p>Bolitas</p>
+                        <select name="select" id="n2b">
+                            <option value=0 selected>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                        </select> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Rayas</p>
+                        <select name="select" id="n2r">
+                            <option value=0 selected>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Nivel 1</p>
+                        <p>Bolitas</p>
+                        <select name="select" id="n1b">
+                            <option value=0 selected>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                        </select> 
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p>Rayas</p>
+                        <select name="select" id="n1r">
+                            <option value=0 selected>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+					<td id="n3p4">-</td>
+                </tr>
+                <tr>
+					<td id="n3p3">-</td>
+                </tr>
+                <tr>
+					<td id="n3p2">-</td>
+                </tr>
+                <tr>
+					<td id="n3p1">-</td>
+                </tr>
+                <tr>
+					<td><p>/////////////////////////</p></td>
+                </tr>
+                <tr>
+					<td id="n2p4">-</td>
+                </tr>
+                <tr>
+					<td id="n2p3">-</td>
+                </tr>
+                <tr>
+					<td id="n2p2">-</td>
+                </tr>
+                <tr>
+					<td id="n2p1">-</td>
+                </tr>
+                <tr>
+					<td><p>/////////////////////////</p></td>
+                </tr>
+				<tr>
+					<td id="n1p4">-</td>
+                </tr>
+                <tr>
+					<td id="n1p3">-</td>
+                </tr>
+                <tr>
+					<td id="n1p2">-</td>
+                </tr>
+                <tr>
+					<td id="n1p1">-</td>
+                </tr>
+			</tbody>
+        </table>
+        <button onclick="convertir()">Convertir</button>
+        <p id="numero"></p>
+    </body>
+</html>
