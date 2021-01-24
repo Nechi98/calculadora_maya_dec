@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+    <head>
+        <title>MayaDec</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./CSS/bootstrapcss.css" rel="stylesheet">
+        <script src="./JS/js.js"></script>
+        <script>
+            var x=0, y=0, z=0;
+            var raya = "_____";
+
+            function limpiar(){
+                for(var j=1; j<4; j++){
+                    for(var i=1; i<5; i++){
+                        document.getElementById("n"+j+"p"+i).innerHTML = "-";
+                    }
+                }
+            }
+
+            function convertir(){
+                limpiar();
+                x=document.getElementById("numero").value;
+                
+                if(x>7999||x<=0){
+                    if(x==0){
+                        document.getElementById("n1p1").innerHTML = "cero";
+                    }
+                    else{
+                        alert("Por favor, escriba un numero entre 0 y 7999.");
+                    }
+                }
+                else{
+                    var xs=Number.parseInt(x/400);
+
+                    var xs1=Number.parseInt(xs/5);
+                    var xs2=Number.parseInt(xs%5);
+
+                    var puntos = " ";
+
+                    for(var i=0; i<xs2; i++){
+                        puntos = puntos + "o ";
+                    }
+                    var a=1;
+                    while(a<=xs1){
+                        document.getElementById("n3p"+a).innerHTML = raya;
+                        a++;
+                    }
+                    document.getElementById("n3p"+a).innerHTML = puntos;
+
+                    var y=Number.parseInt(x%400);
+                    if(y==0){
+                        document.getElementById("n1p1").innerHTML = "cero";
+                        document.getElementById("n2p1").innerHTML = "cero";
+
+                    }
+                    else{
+                        var ys=Number.parseInt(y/20);
+
+                        var ys1=Number.parseInt(ys/5);
+                        var ys2=Number.parseInt(ys%5);
+
+                        var puntos = " ";
+
+                        for(var i=0; i<ys2; i++){
+                            puntos = puntos + "o ";
+                        }
+                        a=1;
+                        while(a<=ys1){
+                            document.getElementById("n2p"+a).innerHTML = raya;
+                            a++;
+                        }
+                        document.getElementById("n2p"+a).innerHTML = puntos;
+
+                        var z=Number.parseInt(x%20);
+                        if(z==0){
+                            document.getElementById("n1p1").innerHTML = "cero";
+                        }
+                        else{
+                            var zs1=Number.parseInt(z/5);
+                            var zs2=Number.parseInt(z%5);
+
+                            var puntos = " ";
+
+                            for(var i=0; i<zs2; i++){
+                                puntos = puntos + "o ";
+                            }
+                            a=1;
+                            while(a<=zs1){
+                                document.getElementById("n1p"+a).innerHTML = raya;
+                                a++;
+                            }
+                            document.getElementById("n1p"+a).innerHTML = puntos;
+                        } 
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <p>Convertidor de numeros decimales a numeros mayas</p>
+              </div>
+              <div class="col">
+                <a href="./mayaadec.html"><button onclick="" class="btn btn-primary">Conversor maya a decimal</button></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                Escriba un numero entre 0 y 7999: <input type="number" min="0" max="7999" id="numero" value="1"> 
+                <button onclick="convertir()" class="btn btn-primary">Convertir</button>
+              </div>
+              <div class="col">
+                <table id="numero_maya" class="">
+			<tbody>
+                <tr>
+					<td><p>/////////////////////////</p></td>
+                </tr>
+                <tr>
+					<td id="n3p4">-</td>
+                </tr>
+                <tr>
+					<td id="n3p3">-</td>
+                </tr>
+                <tr>
+					<td id="n3p2">-</td>
+                </tr>
+                <tr>
+					<td id="n3p1">-</td>
+                </tr>
+                <tr>
+					<td><p>/////////////////////////</p></td>
+                </tr>
+                <tr>
+					<td id="n2p4">-</td>
+                </tr>
+                <tr>
+					<td id="n2p3">-</td>
+                </tr>
+                <tr>
+					<td id="n2p2">-</td>
+                </tr>
+                <tr>
+					<td id="n2p1">-</td>
+                </tr>
+                <tr>
+					<td><p>/////////////////////////</p></td>
+                </tr>
+				<tr>
+					<td id="n1p4">-</td>
+                </tr>
+                <tr>
+					<td id="n1p3">-</td>
+                </tr>
+                <tr>
+					<td id="n1p2">-</td>
+                </tr>
+                <tr>
+					<td id="n1p1">-</td>
+                </tr>
+			</tbody>
+		</table>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>

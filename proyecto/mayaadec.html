@@ -3,6 +3,8 @@
         <title>MayaDec</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./CSS/bootstrapcss.css" rel="stylesheet">
+        <script src="./JS/js.js"></script>
         <script>
             var x=0;
             var raya = "_____";
@@ -58,131 +60,161 @@
                     a++;
                 }
                 document.getElementById("n3p"+a).innerHTML = puntos;
+                
+                if(x%400<19){
+                    document.getElementById("n2p1").innerHTML = "cero";
+                }
+                if(x%20==0){
+                    document.getElementById("n1p1").innerHTML = "cero";
+                }
             }
         </script>
     </head>
     <body>
-        <p>Convertidor de numeros mayas a numeros decimales</p>
-
-        <table id="numero_maya" class="">
-			<tbody>
-                <tr>
-                    <td>
-                        <p>Nivel 3</p>
-                        <p>Bolitas</p>
-                        <select name="select" id="n3b">
-                            <option value=0 selected>0</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                        </select> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Rayas</p>
-                        <select name="select" id="n3r">
-                            <option value=0 selected>0</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Nivel 2</p>
-                        <p>Bolitas</p>
-                        <select name="select" id="n2b">
-                            <option value=0 selected>0</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                        </select> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Rayas</p>
-                        <select name="select" id="n2r">
-                            <option value=0 selected>0</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Nivel 1</p>
-                        <p>Bolitas</p>
-                        <select name="select" id="n1b">
-                            <option value=0 selected>0</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                            <option value=4>4</option>
-                        </select> 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <p>Rayas</p>
-                        <select name="select" id="n1r">
-                            <option value=0 selected>0</option>
-                            <option value=1>1</option>
-                            <option value=2>2</option>
-                            <option value=3>3</option>
-                        </select>
-                    </td>
-                </tr>
-                <tr>
-					<td id="n3p4">-</td>
-                </tr>
-                <tr>
-					<td id="n3p3">-</td>
-                </tr>
-                <tr>
-					<td id="n3p2">-</td>
-                </tr>
-                <tr>
-					<td id="n3p1">-</td>
-                </tr>
-                <tr>
-					<td><p>/////////////////////////</p></td>
-                </tr>
-                <tr>
-					<td id="n2p4">-</td>
-                </tr>
-                <tr>
-					<td id="n2p3">-</td>
-                </tr>
-                <tr>
-					<td id="n2p2">-</td>
-                </tr>
-                <tr>
-					<td id="n2p1">-</td>
-                </tr>
-                <tr>
-					<td><p>/////////////////////////</p></td>
-                </tr>
-				<tr>
-					<td id="n1p4">-</td>
-                </tr>
-                <tr>
-					<td id="n1p3">-</td>
-                </tr>
-                <tr>
-					<td id="n1p2">-</td>
-                </tr>
-                <tr>
-					<td id="n1p1">-</td>
-                </tr>
-			</tbody>
-        </table>
-        <button onclick="convertir()">Convertir</button>
-        <p id="numero"></p>
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <p>Convertidor de numeros mayas a numeros decimales</p>
+              </div>
+              <div class="col">
+                <a href="./decamaya.html"><button onclick="" class="btn btn-primary">Conversor decimal a maya</button></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <table id="select_maya" class="">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>Nivel 3</p>
+                                <p>Bolitas</p>
+                                <select name="select" id="n3b">
+                                    <option value=0 selected>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                </select> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Rayas</p>
+                                <select name="select" id="n3r">
+                                    <option value=0 selected>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Nivel 2</p>
+                                <p>Bolitas</p>
+                                <select name="select" id="n2b">
+                                    <option value=0 selected>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                </select> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Rayas</p>
+                                <select name="select" id="n2r">
+                                    <option value=0 selected>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Nivel 1</p>
+                                <p>Bolitas</p>
+                                <select name="select" id="n1b">
+                                    <option value=0 selected>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                    <option value=4>4</option>
+                                </select> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>Rayas</p>
+                                <select name="select" id="n1r">
+                                    <option value=0 selected>0</option>
+                                    <option value=1>1</option>
+                                    <option value=2>2</option>
+                                    <option value=3>3</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+              <div class="col">
+                <button onclick="convertir()">Convertir</button>
+                <p id="numero"></p>
+              </div>
+              <div class="col">
+                <table id="numero_maya" class="">
+                    <tbody>
+                        <tr>
+                            <td><p>/////////////////////////</p></td>
+                        </tr>
+                        <tr>
+                            <td id="n3p4">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n3p3">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n3p2">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n3p1">-</td>
+                        </tr>
+                        <tr>
+                            <td><p>/////////////////////////</p></td>
+                        </tr>
+                        <tr>
+                            <td id="n2p4">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n2p3">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n2p2">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n2p1">-</td>
+                        </tr>
+                        <tr>
+                            <td><p>/////////////////////////</p></td>
+                        </tr>
+                        <tr>
+                            <td id="n1p4">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n1p3">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n1p2">-</td>
+                        </tr>
+                        <tr>
+                            <td id="n1p1">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
     </body>
 </html>
